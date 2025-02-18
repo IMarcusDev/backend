@@ -12,7 +12,7 @@ const __dirname = path.dirname(__filename);
 
 // Middleware
 app.use(cors({
-  origin: "https://tu-frontend.github.io", // Reemplaza con la URL de tu GitHub Pages
+  origin: "https://IMarcusDev.github.io/ProjectConsultorio", // Reemplaza con la URL de tu GitHub Pages
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
