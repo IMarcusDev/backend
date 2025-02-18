@@ -4,7 +4,7 @@ import { PORT } from "./config/config.js"
 import { pool } from "./config/db.js";
 
 const app = express();
-const PORT = process.env.PORT || 5000; 
+
 
 app.get("/api/status", async (req, res) => {
   try {
@@ -528,4 +528,6 @@ app.post("/api/ListaDoctoresSecretarios", async (req, res) => {
 
 
 app.listen(PORT);
+
+
 
