@@ -1,16 +1,10 @@
 import express from "express";
-import cors from "cors";
-import * as Queries from "./db/queries.js"; // 
+import * as Queries from "./db/queries.js";
+import { PORT } from "./config/config.js"
+import { pool } from "./config/db.js";
 
 const app = express();
 const PORT = process.env.PORT || 5000; 
-
-app.use(cors({
-  origin: "https://IMarcusDev.github.io/ProjectConsultorio",
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
-}));
-app.use(express.json()); 
 
 app.get("/api/status", async (req, res) => {
   try {
