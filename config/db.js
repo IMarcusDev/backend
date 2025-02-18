@@ -7,7 +7,7 @@ import {
   DB_HOST
 } from './config.js'
 
-export const pool = createPool({
+const pool = createPool({
   host: DB_HOST,
   user: DB_USER, 
   password: DB_PASSWORD, 
@@ -15,3 +15,4 @@ export const pool = createPool({
   port: DB_PORT, 
 });
 
+export default pool;

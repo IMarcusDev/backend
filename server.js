@@ -1,7 +1,6 @@
 import express from "express";
 import * as Queries from "./db/queries.js";
 import { PORT } from "./config/config.js"
-import { pool } from "./config/db.js";
 
 const app = express();
 
@@ -525,7 +524,6 @@ app.post("/api/ListaDoctoresSecretarios", async (req, res) => {
     res.status(500).json({ message: "Error al obtener los datos: " + error.message });
   }
 });
-
 
 app.listen(PORT);
 
