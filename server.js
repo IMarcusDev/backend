@@ -1,9 +1,15 @@
 import express from "express";
 import * as Queries from "./db/queries.js";
 import { PORT } from "./config/config.js"
+import cors from 'cors';
 
 const app = express();
 
+app.use(cors({
+  origin: 'https://tu-frontend-en-railway.com',
+  methods: 'GET,POST,PUT,DELETE',
+  allowedHeaders: 'Content-Type,Authorization',
+}));
 
 app.get("/api/status", async (req, res) => {
   try {
