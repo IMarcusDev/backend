@@ -11,6 +11,8 @@ app.use(cors({
   allowedHeaders: 'Content-Type,Authorization',
 }));
 
+app.use(express.json());
+
 app.get("/api/status", async (req, res) => {
   try {
     const rows = await Queries.getRoles();
@@ -34,7 +36,7 @@ app.get("/api/user/:username", async (req, res) => {
 app.post("/api/register", async (req, res) => {
   try {
       const { Names, SurNames, cedula, fecha_nac, email, username, password } = req.body;
-
+      
       if (!Names || !SurNames || !fecha_nac || !email || !username || !password || !cedula) {
           return res.status(400).json({ message: "Debe llenar todos los campos" });
       }
