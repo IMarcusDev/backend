@@ -6,7 +6,7 @@ import cors from 'cors';
 const app = express();
 
 app.use(cors({
-  origin: 'https://projectconsultorio-production.up.railway.app/',
+  origin: 'https://projectconsultorio-production.up.railway.app',
   methods: 'GET,POST,PUT,DELETE',
   allowedHeaders: 'Content-Type,Authorization',
 }));
