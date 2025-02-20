@@ -467,7 +467,12 @@ app.get("/api/bookedSlots/:date", async (req, res) => {
   try {
     const { date } = req.params;
     const bookedSlots = await Queries.getBookedSlots(date);
-    res.status(200).json(bookedSlots);
+    res.status(200).json({
+      success: true,
+      message: bookedSlots.length > 0 ? "Horarios reservados obtenidos exitosamente." : "No hay horarios reservados.",
+      data: bookedSlots
+    });
+    console.log(res);
   } catch (error) {
     res.status(500).json({ message: "Error al obtener los horarios reservados: " + error.message });
   }
